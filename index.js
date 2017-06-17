@@ -1,4 +1,5 @@
-import fetch from 'node-fetch';
+import 'whatwg-fetch';
+import "core-js/library/es6/promise";
 import { stringify } from 'querystring';
 import dashify from 'dashify';
 

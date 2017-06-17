@@ -1,6 +1,6 @@
 {
   "name": "vagalume",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Biblioteca para acessar a Vagalume API",
   "homepage": "https://github.com/gpedro/vagalume-api/",
   "author": {
@@ -20,10 +20,15 @@
     "gpedro"
   ],
   "browser": true,
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
   "scripts": {
     "dist": "npm run-script build-browser && npm run-script build-browser-minified",
-    "build-browser": "./node_modules/.bin/babel index.js --out-file dist/vagalume.js --source-maps",
-    "build-browser-minified": "./node_modules/.bin/babel index.js --out-file dist/vagalume.min.js --source-maps --minified",
+    "build-browser": "browserify index.js -o dist/vagalume.js -t [ babelify --presets [es2017]] --source-maps",
+    "build-browser-minified": "browserify index.js -o dist/vagalume.min.js -t [ babelify --presets [es2017]] --source-maps --minified",
     "test": "jest --silent"
   },
   "files": [
@@ -31,15 +36,17 @@
     "dist"
   ],
   "dependencies": {
-    "dashify": "^0.2.2",
-    "node-fetch": "^1.7.1",
     "babel-jest": "^20.0.3",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.5.2",
-    "babel-preset-es2017": "^6.24.1"
+    "babel-preset-es2017": "^6.24.1",
+    "dashify": "^0.2.2",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
     "jest": "^20.0.4",
     "querystring": "^0.2.0"
   }
