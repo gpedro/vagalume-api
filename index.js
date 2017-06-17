@@ -1,5 +1,5 @@
 import 'whatwg-fetch';
-import "core-js/library/es6/promise";
+import 'babel-polyfill';
 import { stringify } from 'querystring';
 import dashify from 'dashify';
 
