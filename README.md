@@ -10,7 +10,7 @@ $ npm install vagalume
 ## Usage
 
 ```js
-const Vagalume = require('vagalume-api');
+const Vagalume = require('vagalume');
 const vagalume = new Vagalume(apikey);
 
 vagalume.artist('u2').then(response => {

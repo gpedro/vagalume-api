@@ -1,12 +1,12 @@
 import 'whatwg-fetch';
-import 'babel-polyfill';
+import "core-js/library/es6/promise";
 import { stringify } from 'querystring';
 import dashify from 'dashify';
 
 const webBaseUrl = 'https://www.vagalume.com.br';
 const apiBaseUrl = 'https://api.vagalume.com.br';
 
-class Vagalume {
+var Vagalume = global.Vagalume = class Vagalume {
 
 	constructor(apikey) {
 		this.apikey = apikey;
@@ -72,8 +72,4 @@ class Vagalume {
 	}
 }
 
-if (typeof module !== 'undefined' && module.exports) {
-	module.exports = Vagalume;
-} else {
-	window.Vagalume = Vagalume;
-}
+module.exports = Vagalume;
