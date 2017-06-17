@@ -1,0 +1,46 @@
+{
+  "name": "vagalume",
+  "version": "1.0.0",
+  "description": "Biblioteca para acessar a Vagalume API",
+  "homepage": "https://github.com/gpedro/vagalume-api/",
+  "author": {
+    "name": "Gabriel Pedro",
+    "email": "gpedro831@gmail.com",
+    "url": "https://gpedro.net"
+  },
+  "repository": "gpedro/vagalume-api",
+  "license": "MIT",
+  "keywords": [
+    "node-vagalume",
+    "vagalume-api",
+    "vagalume",
+    "musica",
+    "api",
+    "brasil",
+    "gpedro"
+  ],
+  "browser": true,
+  "scripts": {
+    "dist": "npm run-script build-browser && npm run-script build-browser-minified",
+    "build-browser": "./node_modules/.bin/babel index.js --out-file dist/vagalume.js --source-maps",
+    "build-browser-minified": "./node_modules/.bin/babel index.js --out-file dist/vagalume.min.js --source-maps --minified",
+    "test": "jest --silent"
+  },
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "dependencies": {
+    "dashify": "^0.2.2",
+    "node-fetch": "^1.7.1",
+    "babel-jest": "^20.0.3",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-es2017": "^6.24.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "jest": "^20.0.4",
+    "querystring": "^0.2.0"
+  }
+}
