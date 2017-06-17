@@ -72,4 +72,4 @@ var Vagalume = global.Vagalume = class Vagalume {
 	}
 }
 
-module.exports = Vagalume;
+export default Vagalume;
