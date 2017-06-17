@@ -1,6 +1,6 @@
 {
   "name": "vagalume",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Biblioteca para acessar a Vagalume API",
   "homepage": "https://github.com/gpedro/vagalume-api/",
   "author": {
